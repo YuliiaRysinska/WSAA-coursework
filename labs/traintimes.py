@@ -1,4 +1,4 @@
-# !!!!!!!! again don't works!!!!!!!!
+# !!!!!!!! interpreter - CONDA!!!!!!!!
 from xml.dom.minidom import parseString
 import requests
 import csv
