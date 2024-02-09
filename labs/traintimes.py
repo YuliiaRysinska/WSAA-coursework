@@ -1,3 +1,12 @@
+#program that prints the data for all trains to console.
+# !!!!You can modify this to store all the data in a CSV file
+# Use API http://api.irishrail.ie/realtime/realtime.asmx/getCurrentTrainsXML to retrieve the data.
+
+# Then as an exercise only store trains that have a train code that starts with D:
+# For data sets of this size I would normally get all the data, and perform analysis (deletions) later.
+# Get the data:
+# 1. Go to the URL and check that it works, have a quick look at the format of the XML.
+# 2. Create a python program that reads the XML from the URL and prints it out, using minidom. Check it does retrieve the data
 
 from xml.dom.minidom import parseString
 import requests
@@ -20,8 +29,8 @@ doc = parseString(page.content)
 print (doc.toprettyxml(), end='') #output to console
 
 # if I want to store the xml in a file
-with open("trainxml.xml","w") as xmlfp:
-    doc.writexml(xmlfp)
+# with open("trainxml.xml","w") as xmlfp:
+#   doc.writexml(xmlfp)
 
 
 # I had an issue with blank lines in the file so found solution at
