@@ -4,7 +4,7 @@
 import requests
 import urllib.parse
 #3. put the api into a config file
-from config import config as cfg
+from week05.html2pdf.config import config as cfg
 
 targetUrl = "https://en.wikipedia.org"
 
