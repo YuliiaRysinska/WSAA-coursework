@@ -4,12 +4,12 @@
 import requests
 import urllib.parse
 #3. put the api into a config file
-from week05.html2pdf.config import config as cfg
+from config import config as cfg
 
 targetUrl = "https://en.wikipedia.org"
 
 apiKey = cfg["htmltopdfkey"]
-apiurl = "https://dash.html2pdf.app/api-keys"
+apiurl = "https://api.html2pdf.app/v1/generate"
 
 params = {'url': targetUrl,'apiKey': apiKey}
 parsedparams = urllib.parse.urlencode(params)
