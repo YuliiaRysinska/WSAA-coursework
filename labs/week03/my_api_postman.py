@@ -8,6 +8,7 @@
 #curl -H "Content-Type:application/json" -X POST -d "{\"Title\":\"xxx\",\"Author\":\"xxx\",\"Price\":3000}" http://andrewbeatty1.pythonanywhere.com/books
 
 # 4  update a book
+
 # curl -H "Content-Type:application/json" -X PUT -d "{\"Price\":2000}" http://andrewbeatty1.pythonanywhere.com/books/???
 
 # 5  delete the book you just made
