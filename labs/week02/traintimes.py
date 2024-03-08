@@ -16,7 +16,7 @@ url = "http://api.irishrail.ie/realtime/realtime.asmx/getCurrentTrainsXML"
 page = requests.get(url)
 
 doc = parseString(page.content)
-# check it works
+
 # newl='' gets rid of the new lines when printing
 print (doc.toprettyxml(newl='')) #output to console
 
