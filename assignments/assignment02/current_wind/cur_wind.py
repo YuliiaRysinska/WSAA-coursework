@@ -15,3 +15,4 @@ current = data["current"]
 wind_speed_10m = current["wind_speed_10m"]
 print(wind_speed_10m)
 
+
