@@ -15,3 +15,4 @@ with open("weatherdump.json",'w') as fp:
 current = data["current"]
 temperature_2m = current["temperature_2m"]
 print(temperature_2m)
+
