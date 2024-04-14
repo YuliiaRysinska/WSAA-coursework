@@ -24,9 +24,11 @@ def getCursor(self):
         )
         self.cursor = self.connection.cursor()
         return self.cursor
+
 def closeAll(self):
         self.connection.close()
         self.cursor.close()
+        
 def create(self, values):
         cursor = self.getCursor()
         sql="insert into student (name, age) values (%s,%s)"
@@ -35,6 +37,7 @@ def create(self, values):
         newid = cursor.lastrowid
         self.closeAll()
         return newid
+
 def getAll(self):
         cursor = self.getcursor()
         sql="select * from student"
@@ -78,12 +81,14 @@ def delete(self, id):
         self.connection.commit()
         self.closeAll()
         
-#studentDAO = StudentDAO()
-# def convertToDictionary(self, resultLine):
-        # attkeys=['id','title','author', "price"]
-        # book = {}
-        # currentkey = 0
-        # for attrib in resultLine:
-        #     book[attkeys[currentkey]] = attrib
-        #     currentkey = currentkey + 1 
-        # return book
+
+def convertToDictionary(resultLine):
+        studentKeys=['id','name', 'age']
+        student = {}
+        currentkey = 0
+        for attrib in resultLine:
+            student[studentKeys[currentkey]] = attrib
+            currentkey = currentkey + 1 
+        return student
+        
+studentDAO = StudentDAO()
