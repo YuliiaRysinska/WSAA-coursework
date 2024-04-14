@@ -1,4 +1,5 @@
 import mysql.connector
+#import dbconfig as cfg
 class StudentDAO:
       host =""
       user = ""
@@ -34,12 +35,55 @@ def create(self, values):
         newid = cursor.lastrowid
         self.closeAll()
         return newid
-#def getAll(self):
-# your code here
-#def findByID(self, id):
-#your code here
-#def update(self, values):
-#your code here
-#def delete(self, id):
-# your code here
+def getAll(self):
+        cursor = self.getcursor()
+        sql="select * from student"
+        cursor.execute(sql)
+        results = cursor.fetchall()
+        returnArray = []
+        #print(results)
+        for result in results:
+            #print(result)
+            returnArray.append(self.convertToDictionary(result))
+
+
+def findByID(self, id):
+        cursor = self.getcursor()
+        sql="select * from sdudent where id = 2"
+        values = (id,)
+        
+        cursor.execute(sql, values)
+        result = cursor.fetchone()
+        returnvalue = self.convertToDictionary(result)
+        self.closeAll()
+        return returnvalue
+
+def update(self, values):
+        cursor = self.getcursor()
+        sql="update book set title= %s,author=%s, price=%s  where id = %s"
+        
+        #values = (student.get("title"), student.get("author"), book.get("price"),id)
+        cursor.execute(sql, values)
+        self.connection.commit()
+        self.closeAll()
+        
+
+def delete(self, id):
+        cursor = self.getcursor()
+        sql="delete from book where id = %s"
+        values = (id,)
+
+        cursor.execute(sql, values)
+
+        self.connection.commit()
+        self.closeAll()
+        
 #studentDAO = StudentDAO()
+# def convertToDictionary(self, resultLine):
+        # attkeys=['id','title','author', "price"]
+        # book = {}
+        # currentkey = 0
+        # for attrib in resultLine:
+        #     book[attkeys[currentkey]] = attrib
+        #     currentkey = currentkey + 1 
+        # return book

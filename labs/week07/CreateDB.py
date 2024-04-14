@@ -5,13 +5,18 @@
 
 # 1. Create a database called wsaa using a python script
 import mysql.connector
-connection = mysql.connector.connect(
+    
+db = mysql.connector.connect(
  host="localhost",
  user="root",
  password=""
+ #database="mydb" now is connection
 )
-mycursor = connection.cursor()
-mycursor.execute("CREATE database wsaa")
-mycursor.close()
-connection.close()
+cursor = db.cursor()
+
+cursor.execute("CREATE database wsaa")
+
+cursor.close()
+db.close()
+
 
