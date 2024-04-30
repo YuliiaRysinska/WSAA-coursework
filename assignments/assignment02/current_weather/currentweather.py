@@ -7,7 +7,7 @@ print(response.json())
 
 # create this json file in VSC
 data = response.json()
-with open("weatherdump.json",'w') as fp:
+with open("weather_data.json",'w') as fp:
         json.dump(data,fp)
 
 

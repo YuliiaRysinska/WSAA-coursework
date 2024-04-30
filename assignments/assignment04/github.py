@@ -5,10 +5,15 @@ import requests
 import json
 
 #filename = "repos-public.json"
-filename = "wsaa-code.json"
+filename = "wsaa_code.json"
 
 
 url = 'https://api.github.com/repos/andrewbeattycourseware/wsaa-course-material/contents/code'
+str. replace(andrewbeatty, YULIIA[*])
+def solve(s):
+    for x in s.split():
+        s = s.replace(x, x.capitalize())
+    return s
 
 response = requests.get(url)
 print (response.status_code)
