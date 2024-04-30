@@ -10,7 +10,7 @@ data = response.json()
 with open("weatherdump.json",'w') as fp:
         json.dump(data,fp)
 
-# Formating: ALT+SHIFT+F
+
 # get spesific data 'temperature'
 current = data["current"]
 temperature_2m = current["temperature_2m"]

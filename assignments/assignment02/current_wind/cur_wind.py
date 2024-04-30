@@ -10,7 +10,7 @@ data = response.json()
 with open("cur_wind.json","w")as fp:
     json.dump(data,fp)
 
-#3.ALT+SHIFT+F. get specific data: current--> wind_speed_10m
+#3. get specific data: current--> wind_speed_10m
 current = data["current"]
 wind_speed_10m = current["wind_speed_10m"]
 print(wind_speed_10m)
