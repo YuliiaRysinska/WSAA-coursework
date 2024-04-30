@@ -9,11 +9,9 @@ filename = "wsaa_code.json"
 
 
 url = 'https://api.github.com/repos/andrewbeattycourseware/wsaa-course-material/contents/code'
-str. replace(andrewbeatty, YULIIA[*])
-def solve(s):
-    for x in s.split():
-        s = s.replace(x, x.capitalize())
-    return s
+# try to change name in url
+#new_url = url.replace("andrebeatty", replace_with="yuliia")
+
 
 response = requests.get(url)
 print (response.status_code)
